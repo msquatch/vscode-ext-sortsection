@@ -1,0 +1,137 @@
+{
+  "name": "sortsection",
+  "displayName": "Sort Sections",
+  "description": "Sorts sections/groups of lines",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "sortsection.sort_section",
+        "title": "Sort Section of Lines in Ascending Order"
+      },
+      {
+        "command": "sortsection.sort_selection",
+        "title": "Sort Selection of Lines in Ascending Order"
+      },
+      {
+        "command": "sortsection.sort_section_desc",
+        "title": "Sort Section of Lines in Descending Order"
+      },
+      {
+        "command": "sortsection.sort_selection_desc",
+        "title": "Sort Selection of Lines in Descending Order"
+      },
+
+      {
+        "command": "sortsection.sort_section_numeric",
+        "title": "Sort Section of Lines in Ascending Numeric Order"
+      },
+      {
+        "command": "sortsection.sort_selection_numeric",
+        "title": "Sort Selection of Lines in Ascending Numeric Order"
+      },
+      {
+        "command": "sortsection.sort_section_numeric_desc",
+        "title": "Sort Section of Lines in Descending Numeric Order"
+      },
+      {
+        "command": "sortsection.sort_selection_numeric_desc",
+        "title": "Sort Selection of Lines in Descending Numeric Order"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "sortsection.sort_section",
+          "group": "2_modification",
+          "when": "!editorHasSelection"
+        },
+        {
+          "command": "sortsection.sort_selection",
+          "group": "2_modification",
+          "when": "editorHasSelection"
+        },
+        {
+          "submenu": "sortsection.sort_submenu",
+          "group": "2_modification"
+        }
+      ],
+      "sortsection.sort_submenu": [
+        {
+          "command": "sortsection.sort_section",
+          "group": "1_modification",
+          "when": "!editorHasSelection"
+        },
+        {
+          "command": "sortsection.sort_selection",
+          "group": "1_modification",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "sortsection.sort_section_desc",
+          "group": "1_modification",
+          "when": "!editorHasSelection"
+        },
+        {
+          "command": "sortsection.sort_selection_desc",
+          "group": "1_modification",
+          "when": "editorHasSelection"
+        },
+
+        {
+          "command": "sortsection.sort_section_numeric",
+          "group": "1_modification2",
+          "when": "!editorHasSelection"
+        },
+        {
+          "command": "sortsection.sort_selection_numeric",
+          "group": "1_modification2",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "sortsection.sort_section_numeric_desc",
+          "group": "1_modification2",
+          "when": "!editorHasSelection"
+        },
+        {
+          "command": "sortsection.sort_selection_numeric_desc",
+          "group": "1_modification2",
+          "when": "editorHasSelection"
+        }
+      ]
+    },
+    "submenus": [
+      {
+        "id": "sortsection.sort_submenu",
+        "label": "Sort"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8"
+  }
+}
