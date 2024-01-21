@@ -1,71 +1,30 @@
-# sortsection README
+# Sort Sections
 
-This is the README for your extension "sortsection". After writing up a brief description, we recommend including the following sections.
+![logo](images/sortsection_logo_128x128.jpg)
+
+A [Visual Studio Code](https://code.visualstudio.com) extension that lets you easily sort lines within sections of text.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+This extension provides commands via the Command Palette (⇧⌘P), as well as context menu items (right click on some text) to sort lines of text. Variations, both in ascending and descending order:
 
-For example if there is an image subfolder under your extension project workspace:
+* Lexicographical - lexicographical, according to your locale.
+* Numerical - sorts according to the first numeric value on a line. NaN is ordered before numbers. Non-numeric values are also ordered before numbers.
 
-\!\[feature X\]\(images/feature-x.png\)
+From the Command Palette (⇧⌘P):
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+![command palette](images/command_palette.jpg)
 
-## Requirements
+From the context menu (right-click on text in the editor).
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+![context menu](images/context_menu.jpg)
 
-## Extension Settings
+If you have selected some text before right-clicking, the context menu will change slightly with the assumption that you wish to sort all of the sections of text within the selection:
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+![context menu selected](images/context_menu_selection.jpg)
 
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+Sorting a selection sorts all of the sections (independently) within the selected area, while sorting by section just sorts the section the cursor is in. A section is defined as a group of non-blank lines between blank lines of text.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Everything related to versions and their release notes can be found in the changelog.

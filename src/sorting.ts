@@ -59,7 +59,10 @@ function find_and_sort_sections(
 		if (numeric) {
 			lines = numcomp.sort_numerically(lines);
 		} else {
-			lines.sort();
+			// lines.sort();
+			lines.sort((a: string, b: string): number => {
+				return a.localeCompare(b);
+			});
 		}
 		if (descending) {
 			lines.reverse();

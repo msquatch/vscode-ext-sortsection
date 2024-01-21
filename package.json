@@ -2,49 +2,58 @@
   "name": "sortsection",
   "displayName": "Sort Sections",
   "description": "Sorts sections/groups of lines",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "publisher": "msquatch",
   "engines": {
     "vscode": "^1.85.0"
   },
+  "license": "MIT - SEE LICENSE IN LICENSE.",
   "categories": [
-    "Other"
+    "Formatters", "Other"
   ],
+  "keywords": [ "sort", "sorting" ],
+  "markdown": "github",
   "activationEvents": [],
   "main": "./out/extension.js",
+  "icon": "images/sortsection_logo_256x256.jpg",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/msquatch/vscode-ext-sortsection.git"
+  },
   "contributes": {
     "commands": [
       {
         "command": "sortsection.sort_section",
-        "title": "Sort Section of Lines in Ascending Order"
+        "title": "Sort Section Ascending Lexicographical Order"
       },
       {
         "command": "sortsection.sort_selection",
-        "title": "Sort Selection of Lines in Ascending Order"
+        "title": "Sort Selection in Ascending Lexicographical Order"
       },
       {
         "command": "sortsection.sort_section_desc",
-        "title": "Sort Section of Lines in Descending Order"
+        "title": "Sort Section in Descending Lexicographical Order"
       },
       {
         "command": "sortsection.sort_selection_desc",
-        "title": "Sort Selection of Lines in Descending Order"
+        "title": "Sort Selection in Descending Lexicographical Order"
       },
 
       {
         "command": "sortsection.sort_section_numeric",
-        "title": "Sort Section of Lines in Ascending Numeric Order"
+        "title": "Sort Section in Ascending Numeric Order"
       },
       {
         "command": "sortsection.sort_selection_numeric",
-        "title": "Sort Selection of Lines in Ascending Numeric Order"
+        "title": "Sort Selection in Ascending Numeric Order"
       },
       {
         "command": "sortsection.sort_section_numeric_desc",
-        "title": "Sort Section of Lines in Descending Numeric Order"
+        "title": "Sort Section in Descending Numeric Order"
       },
       {
         "command": "sortsection.sort_selection_numeric_desc",
-        "title": "Sort Selection of Lines in Descending Numeric Order"
+        "title": "Sort Selection in Descending Numeric Order"
       }
     ],
     "menus": {
